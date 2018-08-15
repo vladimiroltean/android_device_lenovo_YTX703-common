@@ -211,11 +211,13 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/$(TARGET_DEVICE)/system.prop
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
+ifeq (0,1)
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 # Include legacy sepolicy to match soc.0 handling of kernels < v3.18
 include device/qcom/sepolicy/legacy-sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+endif
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
